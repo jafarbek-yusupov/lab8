@@ -16,23 +16,26 @@ int digits(int n){
 }
 
 // PROBLEM 16
-
-bool isLychrel(int n){
+int rvrs(int n){
     int d = digits(n);
     int m = 0;
     while(n!=0){
         m += n%10 * pow(10, d-1);
         n/=10; d--;
     }
+    return m;
+}
 
+bool isLychrel(int n){
+    return (rvrs(n)+n == rvrs(rvrs(n)+n) ? false : true);
     //return m + n == isPal(m + n) ? true : false;
 }
 
 
 int main() {
-    int m, n;
-    cin >> m >> n;
-    cout << isLychrel(n);
+    int n;
+    cin >> n;
+    cout << (isLychrel(n) == 1 ? "This is Lychrel number" : "This is NOT Lychrel number");
     //cout << (getType(n) == 1 ? "Even digit int" : "Odd digit int")  << endl;
     return 0;
 }
