@@ -8,14 +8,12 @@ int getType(int n){
     }
     return c%2==0 ? 1:0 ;
 }
-
+// PROBLEM 16
 int digits(int n){
     int d = 0;
     while(n!=0){ n/=10; d++; }
     return d;
 }
-
-// PROBLEM 16
 int rvrs(int n){
     int d = digits(n);
     int m = 0;
@@ -25,12 +23,10 @@ int rvrs(int n){
     }
     return m;
 }
-
 bool isLychrel(int n){
     return (rvrs(n)+n == rvrs(rvrs(n)+n) ? false : true);
-    //return m + n == isPal(m + n) ? true : false;
 }
-
+// PROBLEM 16
 
 int main() {
     int n;
