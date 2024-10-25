@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
 
+// PROBLEM 10
+void revChar(char& c){
+    cout << (char)(c >= 'A' && c <= 'Z' ? c - 'A' + 'a' : c + 'A' - 'a') << endl;
+}
+
 int getType(int n){
     int c=0;
     while(n!=0){
